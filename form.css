@@ -1,46 +1,34 @@
-.register{
+ /* .register{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-    margin-top: 1%;
-	/* padding-bottom: 50px; */
-    padding: 3%;
-	/* margin-top: 5px; */
-	/* overflow: scroll; */
+    margin-top: -1%;
+    border-radius: 10px;
+	padding: 3%;
 	width: auto;
-	/* height: 660px; */
-	/* margin-top: 20px; */
-	/* overflow-y: hidden; */
 }
-/* .welcome{
-	line: 20px;
-} */
+.gen{
+    color: #495057;
+    margin-left: 10px;
+ }
+.lan{
+    color: #495057;
+    margin-left: 13px;
+ }
+ #male{
+    margin-left: 10px;
+ }
+ #female{
+    margin-left: 10px;
+ }
+ .first{
+    margin-left: 10px;
+ }
  .welcome{
-	margin-top: 90px;
+	margin-top: 140px;
  }
  .Our{
 	font-size: 20px;
  }
- .eng{
-	margin-left: 20px;
-	/* margin-bottom: 10px; */
-	/* margin-left: 20px; */
- }
- .js{
-	margin-left: 15px;
- }
- .first{
-/* padding-top: 50px; */
-   margin-left: 15px;
-/* margin-top: -5px; */
- }
- #vehicle1{
-	/* margin-bottom: 10px; */
-	margin-left: 20px;
-	/* margin-top: -10px; */
- }
- #vehicle2{
-	/* margin-bottom: 10px; */
-	margin-left: 20px;
- }
+
 .register-left{
     text-align: center;
     color: #fff;
@@ -66,9 +54,9 @@
 .register-left img{
     margin-top: 15%;
     margin-bottom: 5%;
-	/* padding: 20px; */
+	
     width: 40%;
-	/* height: 50px; */
+	
     -webkit-animation: mover 2s infinite  alternate;
     animation: mover 1s infinite  alternate;
 }
@@ -92,7 +80,7 @@
 .btnRegister{
     float: right;
     margin-top: 8%;
-	/* padding-bottom: 50px; */
+	
     border: none;
     border-radius: 1.5rem;
     padding: 2%;
@@ -136,4 +124,4 @@
 }
 .form-group{
 	margin-top: 1px;
-}
+}  */
