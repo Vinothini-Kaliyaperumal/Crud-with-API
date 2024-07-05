@@ -1,9 +1,10 @@
- /* .register{
+ .register{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-    margin-top: -1%;
+    margin-top: 1%;
     border-radius: 10px;
 	padding: 3%;
 	width: auto;
+    /* margin-bottom: 70px; */
 }
 .gen{
     color: #495057;
@@ -23,10 +24,16 @@
     margin-left: 10px;
  }
  .welcome{
-	margin-top: 140px;
+	margin-top: 80px;
  }
  .Our{
 	font-size: 20px;
+ }
+ .ma{
+    margin-left: 10px;
+ }
+ .fm{
+    margin-left: 10px;
  }
 
 .register-left{
@@ -124,4 +131,22 @@
 }
 .form-group{
 	margin-top: 1px;
-}  */
+} 
+
+.button{
+    /* float: right; */
+    margin-right: -10px;
+    /* margin-top: 70px; */
+	/* margin-right: 810px; */
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    /* background: gray; */
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
+
+
+
