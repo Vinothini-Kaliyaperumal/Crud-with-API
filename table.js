@@ -32,7 +32,7 @@ async function table() {
     k += "<td>" + student[i].gender + "</td>"
     k += "<td>" + student[i].language + "</td>"
     k += "<td>" + student[i].date + "</td>"
-    k += '<td> <button type="button" class="btn btn-primary" onclick="edit(' + student[i].id + ')">Edit</button>   <button type="button" class="btn btn-danger" onclick="Delete(' + student[i].id + ')">Delete</button></td>';
+    k += '<td> <button type="button" class="btn btn-success" onclick="edit(' + student[i].id + ')">Edit</button>  <button type="button" class="btn btn-danger" onclick="Delete(' + student[i].id + ')">Delete</button></td>';
     k += "</tr>"
   }
   document.getElementById("tabledata").innerHTML = k;
@@ -42,9 +42,9 @@ function edit(id) {
   editvalue = id;
   window.location.href = "form.html?id=" + id;
 }
-function back(){
-  window.location.replace('form.html')
-}
+// function back(){
+//   window.location.replace('form.html')
+// }
 function add() {
   window.location.href = "form.html";
 }

@@ -75,7 +75,7 @@ function validateForm() {
  const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{5,20}$/;
 
 if (!passwordPattern.test(password)) {
-    document.getElementById("password_req").textContent = "Password must be 5-20 characters long, contain at least one uppercase letter, one lowercase letter, one digit, and one special character**";
+    document.getElementById("password_req").textContent = "Password required**";
     isValid = false;
 } else {
     document.getElementById("password_req").textContent = "";
@@ -109,13 +109,21 @@ if (c_password !== password) {
         document.getElementById("lang_req").textContent = "";
     }
 
-    if (!date) {
-        document.getElementById("dob_req").textContent = "Date of birth required**";
-        isValid = false;
-    } else {
-        document.getElementById("dob_req").textContent = "";
-    }
+    // if (!date) {
+    //     document.getElementById("dob_req").textContent = "Date of birth required**";
+    //     isValid = false;
+    // } else {
+    //     document.getElementById("dob_req").textContent = "";
+    // }
 
+
+    const dobPattern = /^\d{2}\?\d{2}\?\d{4}$/;
+
+    if (!dobPattern.test(date)) {
+      document.getElementById("dob_req").textContent = 'Date of birth required';
+    } else {
+      document.getElementById("dob_req").textContent = '';
+    }
     return isValid;
 }
 
@@ -166,7 +174,7 @@ async function sendData(data) {
     }
 }
 
-function cancel() {
+function table() {
     window.location.href = "table.html";
 }
 

@@ -16,7 +16,7 @@
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />  
             <h3 class="welcome">Welcome</h3>
             <p class="Our">Our heartiest welcome goes to you....</p>
-            <button type="button" onclick="cancel()"  class="button text-dark"> Table</button>
+            <button type="button" onclick="table()"  class="button text-dark"> Table</button>
         </div>
 
         <div class="col-md-9 register-right">
@@ -26,17 +26,17 @@
                     <div class="row register-form">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" id="name" class="form-control" name="name" placeholder="Username *" value="" required/>
+                                <input type="text" id="name" class="form-control" name="name" placeholder="Username *" value="" />
                                 <div id="name_req" class="error-message"></div>                     
                             </div>
 
                             <div class="form-group">
-                                <input type="text" id="number"  class="form-control" name="phonenum" placeholder="Phone Num *" value="" required/>
+                                <input type="text" id="number"  class="form-control" name="phonenum" placeholder="Phone Num *" value=""/>
                                 <div id="num_req" class="error-message"></div>
                             </div>
 
                             <div class="form-group">
-                                <input type="password" id="password" class="form-control" name="password" placeholder="Password *" value="" required />
+                                <input type="password" id="password" class="form-control" name="password" placeholder="Password *" value="" />
                                 <div id="password_req" class="error-message"></div>
                             </div>
 
@@ -52,17 +52,21 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="email" id="email" class="form-control" name="email" placeholder="Email *" value="" required/>
+                                <input type="email" id="email" class="form-control" name="email" placeholder="Email *" value=""/>
                                 <div id="email_req" class="error-message"></div>
                             </div>
 
+                            <!-- <div class="form-group">
+                                <input type="date" id="date" minlength="10" maxlength="10" name="dateofbirth" class="form-control" placeholder="Date of birth *" value=""/>
+                                <div id="dob_req" class="error-message"></div>
+                            </div> -->
                             <div class="form-group">
-                                <input type="date" id="date" minlength="10" maxlength="10" name="dateofbirth" class="form-control" placeholder="Date of birth *" value="" required/>
+                                <input type="text" id="date" name="dateofbirth" class="form-control" placeholder=" (dd-mm-yyyy) *" />
                                 <div id="dob_req" class="error-message"></div>
                             </div>
 
                             <div class="form-group">
-                                <input type="password" id="c_password" class="form-control" name="confirmpassword" placeholder="Confirm Password *" value="" required/>
+                                <input type="password" id="c_password" class="form-control" name="confirmpassword" placeholder="Confirm Password *" value=""/>
                                 <div id="c_password_req" class="error-message"></div>
                             </div>
 
@@ -70,7 +74,7 @@
                                 <label class="lan">Language *</label><br>
                                 <input type="checkbox" id="tamil" name="language" value="Tamil" class="first"/>
                                 <label for="tamil">Tamil</label>
-                                <input type="checkbox"  id="kannada" name="language" value="Kannada" class="first" />
+                                <input type="checkbox"  id="kannada" name="language" value="Kannada" class="first1" />
                                 <label for="kannada">Kannada</label><br>
                                 <input type="checkbox" id="english" name="language" value="English" class="first"/>
                                 <label for="english">English</label>
@@ -78,12 +82,8 @@
                                 <label for="malayalam">Malayalam</label>
                                 <div id="lang_req" class="error-message"></div>
                             </div>
-
-                            <input type="submit" class="btnRegister" value="Register"/>
-                             
-                                
-                            
-                        </div>
+                                <input type="submit" class="btnRegister" value="Register"/>
+                             </div>
                     </div>
                 </form>
             </div>
