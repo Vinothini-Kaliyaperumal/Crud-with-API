@@ -110,14 +110,6 @@ if (confirmpassword !== password) {
         document.getElementById("lang_req").textContent = "";
     }
 
-    // if (!date) {
-    //     document.getElementById("dob_req").textContent = "Date of birth required**";
-    //     isValid = false;
-    // } else {
-    //     document.getElementById("dob_req").textContent = "";
-    // }
-
-
     const dateofbirthPattern = /^\d{2}\?\d{2}\?\d{4}$/;
 
     if (!dateofbirthPattern.test(dateofbirth)) {
