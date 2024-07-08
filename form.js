@@ -19,10 +19,10 @@ async function loadStudentData(id) {
     const student = await response.json();
     document.getElementById("name").value = student.name;
     document.getElementById("email").value = student.email;
-    document.getElementById("number").value = student.number;
+    document.getElementById("phonenum").value = student.phonenum;
     document.getElementById("password").value = student.password;
-    document.getElementById("c_password").value = student.c_password;
-    document.getElementById("date").value = student.date;
+    document.getElementById("confirmpassword").value = student.confirmpassword;
+    document.getElementById("dateofbirth").value = student.dateofbirth;
 
     if (student.gender === "male") {
       document.getElementById("dot-1").checked = true;
@@ -42,16 +42,17 @@ async function loadStudentData(id) {
 function validateForm() {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
-  const number = document.getElementById("number").value.trim();
+  const phonenum = document.getElementById("phonenum").value.trim();
   const password = document.getElementById("password").value.trim();
-  const c_password = document.getElementById("c_password").value.trim();
+  const confirmpassword = document.getElementById("confirmpassword").value.trim();
   const gender = document.querySelector('input[name="gender"]:checked')?.value;
   const languages = Array.from(document.querySelectorAll('input[name="language"]:checked')).map(el => el.value);
-  const date = document.getElementById("date").value;
+  const dateofbirth = document.getElementById("dateofbirth").value;
   let isValid = true;
 
   if (name.length < 3) {
     document.getElementById("name_req").textContent = "Name required**";
+    document.getElementById("name_req").style.color = "red";
     isValid = false;
   } else {
     document.getElementById("name_req").textContent = "";
@@ -60,43 +61,42 @@ function validateForm() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     document.getElementById("email_req").textContent = "Email required**";
+    document.getElementById("email_req").style.color = "red";
     isValid = false;
   } else {
     document.getElementById("email_req").textContent = "";
   }
 
-  if (!/^\d{3}-\d{3}-\d{4}$/.test(number)) {
-    document.getElementById("num_req").textContent = "Number required**";
+  if (!/^\d{3}-\d{3}-\d{4}$/.test(phonenum)) {
+    document.getElementById("phonenum_req").textContent = "Number required**";
+    document.getElementById("phonenum_req").style.color = "red";
     isValid = false;
   } else {
-    document.getElementById("num_req").textContent = "";
+    document.getElementById("phonenum_req").textContent = "";
   }
 
  const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{5,20}$/;
 
 if (!passwordPattern.test(password)) {
     document.getElementById("password_req").textContent = "Password required**";
+    document.getElementById("password_req").style.color = "red";
     isValid = false;
 } else {
     document.getElementById("password_req").textContent = "";
 }
 
-if (c_password !== password) {
-    document.getElementById("c_password_req").textContent = "Passwords do not match**";
+if (confirmpassword !== password) {
+    document.getElementById("confirmpassword_req").textContent = "Passwords do not match**";
+    document.getElementById("confirmpassword_req").style.color = "red";
     isValid = false;
 } else {
-    document.getElementById("c_password_req").textContent = "";
+    document.getElementById("confirmpassword_req").textContent = "";
 }
-
-    if (c_password !== password) {
-        document.getElementById("c_password_req").textContent = "Passwords do not match**";
-        isValid = false;
-    } else {
-        document.getElementById("c_password_req").textContent = "";
-    }
+    
 
     if (!gender) {
         document.getElementById("gender_req").textContent = "Gender required**";
+        document.getElementById("gender_req").style.color = "red";
         isValid = false;
     } else {
         document.getElementById("gender_req").textContent = "";
@@ -104,6 +104,7 @@ if (c_password !== password) {
 
     if (languages.length === 0) {
         document.getElementById("lang_req").textContent = "Language required**";
+        document.getElementById("lang_req").style.color = "red";
         isValid = false;
     } else {
         document.getElementById("lang_req").textContent = "";
@@ -117,12 +118,13 @@ if (c_password !== password) {
     // }
 
 
-    const dobPattern = /^\d{2}\?\d{2}\?\d{4}$/;
+    const dateofbirthPattern = /^\d{2}\?\d{2}\?\d{4}$/;
 
-    if (!dobPattern.test(date)) {
-      document.getElementById("dob_req").textContent = 'Date of birth required';
+    if (!dateofbirthPattern.test(dateofbirth)) {
+      document.getElementById("dateofbirth_req").textContent = 'Date of birth required**';
+      document.getElementById("dateofbirth_req").style.color = "red";
     } else {
-      document.getElementById("dob_req").textContent = '';
+      document.getElementById("dateofbirth_req").textContent = '';
     }
     return isValid;
 }
@@ -137,12 +139,12 @@ function submitForm(event) {
     const studentData = {
         name: document.getElementById("name").value.trim(),
         email: document.getElementById("email").value.trim(),
-        number: document.getElementById("number").value.trim(),
+        phonenum: document.getElementById("phonenum").value.trim(),
         password: document.getElementById("password").value.trim(),
-        c_password: document.getElementById("c_password").value.trim(),
+        confirmpassword: document.getElementById("confirmpassword").value.trim(),
         gender: document.querySelector('input[name="gender"]:checked')?.value,
         language: Array.from(document.querySelectorAll('input[name="language"]:checked')).map(el => el.value),
-        date: document.getElementById("date").value
+        dateofbirth: document.getElementById("dateofbirth").value
     };
 
     sendData(studentData);
@@ -170,6 +172,7 @@ async function sendData(data) {
         console.log('Success:', result);
         window.location.href = "table.html";
     } catch (error) {
+
         console.error('Error:', error);
     }
 }
@@ -177,6 +180,7 @@ async function sendData(data) {
 function table() {
     window.location.href = "table.html";
 }
+
 
 
 
